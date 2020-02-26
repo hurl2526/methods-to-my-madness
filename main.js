@@ -1,11 +1,30 @@
 /******************
  * YOUR CODE HERE *
  ******************/
+function slice(str,num1,num2){
+  let slicer = '';
+  for (let i = 0; i < str.length; i++){
+   if (typeof num1 === 'undefined' && typeof num2 === 'undefined'){
+    return str;
+   }else if(typeof num2 === 'undefined'){
+  return str.substring(num1, str.length); 
+  } else if (i >= num1 && i < num2){
+      slicer = slicer + str[i];
+    }
+}
+return slicer;
+}
+
+function repeat(str,num){
+  rePizzle = '';
+  for (let i = 0; i < num; i ++){
+    rePizzle = rePizzle + str;
+  }
+  return rePizzle
+}
 
 
-
-
-
+// Join and split need arrays 
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
