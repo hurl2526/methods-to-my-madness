@@ -4,9 +4,9 @@
 function slice(str,num1,num2){
   let slicer = '';
   for (let i = 0; i < str.length; i++){
-   if (typeof num1 === 'undefined' && typeof num2 === 'undefined'){
+   if (num1 === undefined && num2 === undefined){
     return str;
-   }else if(typeof num2 === 'undefined'){
+   }else if(num2 === undefined){
   return str.substring(num1, str.length); 
   } else if (i >= num1 && i < num2){
       slicer = slicer + str[i];
@@ -38,7 +38,7 @@ function endsWith(str,letters){
   if (letters === slice(str,str.length - letters.length,str.length)){
     return true;
   }else {
-    return false
+    return false;
   }
 }
 
@@ -58,16 +58,63 @@ function join (array,parameter){
     }else if (i === array.length - 1){
       combinedString = combinedString + array[i];
     } else {
-    combinedString = combinedString + array[i] + parameter
+    combinedString = combinedString + array[i] + parameter;
   }
 }  
   
-  return combinedString
+  return combinedString;
 }
   
 
-// Join and split need arrays 
+function split(str, separator){
+  let array = [];
+  let string = '';
+  for (let i = 0; i <= str.length; i ++){
+  if (typeof separator === 'undefined'){
+  array.push(str);
+return array;
+}
+  if (str[i] === separator || i === str.length){
+   array.push(string);
+   string='';
+}else {
+  string = string + str[i];
+}
+}
+return array;
+}
 
+function trimStart (str){
+  let newString = '';
+  let count = 0;
+  for (let i = 0; i < str.length; i ++){
+    if (str[0] !== ' '){
+      return str;
+    }
+    if (str[i] !== ' ' || count){
+      newString = newString + str[i];
+      count = 1;
+    }
+  }
+
+  return newString;
+}
+
+// function trimEnd (str){
+//   let newString = '';
+//   let count = 0;
+//   for (let i = str.length -1; i >= 0; i ++){
+//   //   if (str[0] !== ' '){
+//   //     return str;
+//   //   }
+//   //   if (str[i] !== ' ' || count){
+//   //     newString = newString + str[i];
+//   //     count = 1;
+//   //   }
+//   // }
+
+//   return newString;
+}
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
