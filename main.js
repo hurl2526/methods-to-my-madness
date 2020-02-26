@@ -51,7 +51,7 @@ function includes(array, includesThis) {
 function join(array, parameter) {
   let combinedString = '';
   for (let i = 0; i < array.length; i++) {
-    if (typeof parameter === 'undefined') {
+    if (parameter === undefined) {
       combinedString = combinedString + array[i];
     } else if (i === array.length - 1) {
       combinedString = combinedString + array[i];
@@ -112,14 +112,12 @@ function trimEnd(str) {
     }
 
     if (!(str[i] === ' ' && erase === true)) {
-      array.push(str[i])
+      array.push(str[i]);
     }
   }
 
   return join(array.reverse());
 }
-
-trimEnd('  asdfghj  ')
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
