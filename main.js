@@ -16,13 +16,55 @@ return slicer;
 }
 
 function repeat(str,num){
-  rePizzle = '';
+  let rePizzle = '';
   for (let i = 0; i < num; i ++){
     rePizzle = rePizzle + str;
   }
   return rePizzle
 }
 
+function startsWith(str,letters){
+//   if (str[0] === letters && letters.length === 1){
+//   return true;
+// } else if (letters.length > 1 && 
+  if (letters === slice(str,0,letters.length)) {
+  return true;
+}else {
+  return false;
+}
+}
+
+function endsWith(str,letters){
+  if (letters === slice(str,str.length - letters.length,str.length)){
+    return true;
+  }else {
+    return false
+  }
+}
+
+function includes (array, includesThis){
+  for (let i = 0; i < array.length; i ++){
+    if(array[i] === includesThis){
+      return true;}
+  }
+  return false;
+}
+
+function join (array,parameter){
+  let combinedString = '';
+  for (let i = 0; i < array.length; i ++){
+    if (typeof parameter === 'undefined'){
+    combinedString = combinedString + array[i];
+    }else if (i === array.length - 1){
+      combinedString = combinedString + array[i];
+    } else {
+    combinedString = combinedString + array[i] + parameter
+  }
+}  
+  
+  return combinedString
+}
+  
 
 // Join and split need arrays 
 
