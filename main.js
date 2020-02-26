@@ -6,8 +6,8 @@ function slice(str,num1,num2){
   for (let i = 0; i < str.length; i++){
    if (num1 === undefined && num2 === undefined){
     return str;
-   }else if(num2 === undefined){
-  return str.substring(num1, str.length); 
+   }else if(num2 === undefined && i >= num1 && i < str.length){
+  slicer = slicer + str[i]; 
   } else if (i >= num1 && i < num2){
       slicer = slicer + str[i];
     }
@@ -24,14 +24,11 @@ function repeat(str,num){
 }
 
 function startsWith(str,letters){
-//   if (str[0] === letters && letters.length === 1){
-//   return true;
-// } else if (letters.length > 1 && 
   if (letters === slice(str,0,letters.length)) {
   return true;
-}else {
+  }else {
   return false;
-}
+  }
 }
 
 function endsWith(str,letters){
@@ -101,20 +98,20 @@ function trimStart (str){
 }
 
 function trimEnd (str){
-  let newString = '';
-  let count = str.length;
+  const array = [];
+  let count = str.length -1;
   for (let i = str.length -1; i >= 0; i --){
     if (str[str.length-1] !== ' '){
       return str;
     }
-  if (str[str.length - 1] !== ' ' || count){
-      newString = newString + str[i];
-      count = 1;
+    if (str[str.length - 1] !== ' ' || count){
+      array.push(str[i]);
+      count = str.length - 2;
   }
 }
-    
+  array.reverse();  
 
-  return newString;
+  return join(array);
 }
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
