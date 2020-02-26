@@ -100,20 +100,21 @@ function trimStart (str){
   return newString;
 }
 
-// function trimEnd (str){
-//   let newString = '';
-//   let count = 0;
-//   for (let i = str.length -1; i >= 0; i ++){
-//   //   if (str[0] !== ' '){
-//   //     return str;
-//   //   }
-//   //   if (str[i] !== ' ' || count){
-//   //     newString = newString + str[i];
-//   //     count = 1;
-//   //   }
-//   // }
+function trimEnd (str){
+  let newString = '';
+  let count = str.length;
+  for (let i = str.length -1; i >= 0; i --){
+    if (str[str.length-1] !== ' '){
+      return str;
+    }
+  if (str[str.length - 1] !== ' ' || count){
+      newString = newString + str[i];
+      count = 1;
+  }
+}
+    
 
-//   return newString;
+  return newString;
 }
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
